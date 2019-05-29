@@ -12,7 +12,9 @@
 
 使用しているリポジトリがHTTPであればこの操作は必要ありません。
 
+```
 PS> git remote add school https://github.com/{username}/{repo}.git
+```
 
 
 ### クローン(校外の場合)
