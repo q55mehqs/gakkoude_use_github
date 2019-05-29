@@ -1,4 +1,4 @@
-git config --global --unset http.proxy
+﻿git config --global --unset http.proxy
 netsh winhttp reset proxy
 
 Write-Output 'プロキシの設定を行いました。'
