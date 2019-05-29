@@ -1,0 +1,71 @@
+## PowerShell でのつかいかた
+
+### 注意
+
+学校のプロキシサーバーのURLを公開するのはさすがにまずそうなのでここでの公開は控えます。
+{school_proxy} と書かれている部分は適宜学内LANのプロキシサーバーにしてください。
+
+
+### 事前設定
+
+利用するリポジトリのremoteアドレスに、HTTPを登録してください。
+
+使用しているリポジトリがHTTPであればこの操作は必要ありません。
+
+PS> git remote add school https://github.com/{username}/{repo}.git
+
+
+### クローン(校外の場合)
+
+普通に適当なディレクトリに当リポジトリをクローンしてください。
+
+```
+PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
+```
+
+
+### クローン(校内の場合)
+
+PowerShellを管理者として実行し、下記コマンドを実行してください。
+
+```
+PS(admin)> netsh winhttp set proxy proxy-server="{proxy_server}"
+PS(admin)> git config --global http.proxy {proxy_server}
+```
+
+そうするとGitHubでGit操作ができるようになるので、(必要に応じて別ターミナルを立ち上げて)
+このリポジトリをクローンしてください。
+
+```
+PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
+```
+
+
+### ショートカット作成・編集
+
+クローンした2つの`.ps1`ファイルのショートカットをそれぞれ作成してください。
+
+作成したショートカットを右クリックし、`プロパティ(R)`を選んでください。
+
+`リンク先(T)` の文字列の先頭に下記文字列を加えてください。
+
+```
+powershell -NoProfile -ExecutionPolicy Unrestricted 
+```
+
+
+### 学校内でプロキシ設定
+
+「Start-Proxy」の作成したリンクを右クリックして「管理者として実行」を選択してください。
+
+Git操作するディレクトリに移り、最初に設定したリモートリポジトリを使用して
+Git操作を行ってください。
+
+```
+PS> git push school master
+```
+
+
+### 学内LAN以外の環境に戻すとき
+
+「Stop-Proxy」の作成したリンクを右クリックして「管理者として実行」を選択してください。
