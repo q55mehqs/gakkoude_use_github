@@ -43,7 +43,7 @@ PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
 
 ### ショートカット作成・編集
 
-クローンした2つの`.ps1`ファイルのショートカットをそれぞれ作成してください。
+クローンした`Settings.ps1` のショートカットを作成してください。
 
 作成したショートカットを右クリックし、`プロパティ(R)`を選んでください。
 
@@ -52,6 +52,15 @@ PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
 ```
 powershell -NoProfile -ExecutionPolicy Unrestricted 
 ```
+
+作成したショートカットを右クリックして、「管理者として実行」を選んでください。
+
+開いたコマンドプロンプトのガイドに沿ってアドレスなどを入力してください。
+
+---
+
+先程の操作で作成された`Start-Proxy.ps1`と、クローンされたファイル内にある
+`Stop-Proxy.ps1`を、`Settings.ps1`と同様にショートカット作成してください。
 
 
 ### 学校内でプロキシ設定
