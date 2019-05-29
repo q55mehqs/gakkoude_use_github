@@ -36,8 +36,8 @@ PS(admin)> netsh winhttp set proxy proxy-server="{proxy_server}"
 PS(admin)> git config --global http.proxy {proxy_server}
 ```
 
-そうするとGitHubでGit操作ができるようになるので、(必要に応じて別ターミナルを立ち上げて)
-このリポジトリをクローンしてください。
+そうするとGitHubとのGitリモートリポジトリ操作ができるようになるので、
+(必要に応じて別ターミナルを立ち上げて)このリポジトリをクローンしてください。
 
 ```
 PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
@@ -46,9 +46,9 @@ PS> git clone https://github.com/q55mehqs/gakkoude_use_github.git
 
 ### ショートカット作成・編集
 
-クローンした`Settings.ps1` のショートカットを作成してください。
+クローンした `Settings.ps1` のショートカットを作成してください。
 
-作成したショートカットを右クリックし、`プロパティ(R)`を選んでください。
+作成したショートカットを右クリックし、`プロパティ(R)` を選んでください。
 
 `リンク先(T)` の文字列の先頭に下記文字列を加えてください。
 
@@ -62,7 +62,7 @@ powershell -NoProfile -ExecutionPolicy Unrestricted
 
 ---
 
-先程の操作で作成された`Start-Proxy.ps1`と、クローンされたファイル内にある
+このの操作で作成された`Start-Proxy.ps1`と、クローンされたファイル内にある
 `Stop-Proxy.ps1`を、`Settings.ps1`と同様にショートカット作成してください。
 
 
@@ -70,25 +70,27 @@ powershell -NoProfile -ExecutionPolicy Unrestricted
 
 「Start-Proxy」の作成したリンクを右クリックして「管理者として実行」を選択してください。
 
-Git操作するディレクトリに移り、最初に設定したリモートリポジトリを使用して
-Git操作を行ってください。
+これで、GitHubのリモートリポジトリと通信を行うことができるようになっているはずです。
+ターミナルを別に開いたのち
 
 ```
 PS> netsh winhttp show proxy
 ```
+
 と入力して、`プロキシ サーバー:` の後ろのアドレスが書き換わってるのを確認してください。
 
-学校のプロキシサーバーに書き換わっているのを確認できたら、HTTP経由でGitHubの操作が
-できるようになります。
+学校のプロキシサーバーに書き換わっているのを確認できたら、
+作業ディレクトリに戻り、GitHubでの操作を行ってください。
 
 ```
+PS> Set-Location {Gitを使用するディレクトリ}　# Set-Location=cd
+PS> git fetch
 PS> git push school master
 ```
-など、操作を行ってください。
 
 
 ### 学内LAN以外の環境に戻すとき
 
 「Stop-Proxy」の作成したリンクを右クリックして「管理者として実行」を選択してください。
 
-他の環境でも操作できる環境に戻ります。
+プロキシサーバーを経由しない通信で操作できる環境に戻ります。
