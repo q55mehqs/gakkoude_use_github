@@ -13,6 +13,6 @@ Proxy + HTTP 通信でできることがわかりました。
 
 ~すり抜けとか書きましたがわりと正攻法で通信してると思ってます~
 
-[PowerShell 環境](Windows_PowerShell/howto.md)
+[PowerShell 環境](Windows_PowerShell/)
 
-bash(作成中)
+[ShellScript](ShellScript/)
