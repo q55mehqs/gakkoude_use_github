@@ -94,3 +94,8 @@ PS> git push school master
 「Stop-Proxy」の作成したリンクを右クリックして「管理者として実行」を選択してください。
 
 プロキシサーバーを経由しない通信で操作できる環境に戻ります。
+
+### 参考
+[PowerShellの使い方(OS設定編)](https://qiita.com/Kirito1617/items/aed439bcb66c63489337#3-%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A)
+
+[GitコマンドをProxy環境可で利用する。](https://qiita.com/ryotaro76/items/0e40ffb6173b1580e671)
